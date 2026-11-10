@@ -1,0 +1,93 @@
+{
+  "model": "UE55BU8000UCCE",
+  "firmware": "T-KSU2EBDEUC-1720.7",
+  "tizen": "6.5",
+  "runtime": "netcoreapp3.1",
+  "tested_at": "2026-10-27/28",
+  "groups": {
+    "acr": [
+      "com.samsung.tv.acr",
+      "com.samsung.tv.iacr",
+      "com.samsung.tizen.samsung-analytics",
+      "com.samsung.tv.targeted-ad-service"
+    ],
+    "optional_features": [
+      "org.tizen.voice-app",
+      "org.tizen.voice-app-service",
+      "org.tizen.voice-client",
+      "org.tizen.stt-client",
+      "org.tizen.voice-onboarding",
+      "org.tizen.multi-assistant-service",
+      "com.samsung.tv.ondevice-voice",
+      "com.samsung.tv.bixby-prov",
+      "com.samsung.tv.bixbycapsuleviewer",
+      "com.samsung.tv.bixby-context-client",
+      "com.samsung.tv.mybixby",
+      "com.samsung.tv.vif",
+      "com.samsung.tv.wakeup-engine-bixby",
+      "com.samsung.tv.wakeup-engine-alexa",
+      "com.samsung.tv.voice-instant-app",
+      "com.samsung.tv.voiceassistant-music",
+      "com.samsung.tv.utterance-recommender-app",
+      "com.samsung.tv.tvplus",
+      "com.samsung.tv.gaminghub",
+      "com.samsung.tv.ghdaemon",
+      "com.samsung.tv.ghservice",
+      "org.tizen.remote-management",
+      "org.tizen.rm-network-status",
+      "org.tizen.rm-service-icon",
+      "org.tizen.rm-survey",
+      "com.samsung.tv.preview-downloader",
+      "com.samsung.tv.tvkey-preview",
+      "KVUrL2ikom.PersonalPreview"
+    ],
+    "advertising": [
+      "com.samsung.tv.adagent-service",
+      "com.samsung.tv.ad-web-framework",
+      "com.samsung.tv.coba.adagent",
+      "adplatform.ADPlayer",
+      "com.samsung.tv.adplayer"
+    ]
+  },
+  "protected_apps": [
+    "9Ur5IzDKqV.TizenYouTube",
+    "com.samsung.tizen.samsung-account",
+    "com.samsung.tizen.samsung-cloud",
+    "com.samsung.tizen.smartthings-client",
+    "com.samsung.tizen.smartthings-hub",
+    "com.samsung.tizen.smartthings-thing",
+    "com.samsung.tv.digitalbutler-app",
+    "com.samsung.tv.digitalbutler-daemon",
+    "com.samsung.tv.iot-hub-control",
+    "com.samsung.tv.iot-service-home-cctv_FLUX",
+    "com.samsung.tv.iot-service-notification",
+    "com.samsung.tv.iot-service-notification-v2",
+    "com.samsung.tv.iotwidget",
+    "com.samsung.tv.mde-framework",
+    "com.samsung.tv.preview-updater",
+    "com.samsung.tv.smartthingsfind-daemon",
+    "com.samsung.tv.smartthingsfind-ondemand",
+    "l2UWJoWHQN.MediaStationX",
+    "com.samsung.tizen.content-panel",
+    "org.tizen.content-tiles-provider",
+    "com.samsung.tv.pisa-service",
+    "org.tizen.pisa-control-service",
+    "com.samsung.tv.cms-daemon",
+    "com.samsung.tv.csft-daemon"
+  ],
+  "runtime_units": [
+    "adagent-service.service",
+    "contents-recognition-service.service",
+    "canalysis-service.service",
+    "remote-management.service",
+    "org.tizen.voice-app.service",
+    "com.samsung.tv.ondevice-voice.service",
+    "com.samsung.tv.ghdaemon.service"
+  ],
+  "stop_markers": [
+    "canalysis-daemon",
+    "org.tizen.voice-app",
+    "com.samsung.tv.ondevice-voice",
+    "com.samsung.tv.ghdaemon"
+  ]
+}

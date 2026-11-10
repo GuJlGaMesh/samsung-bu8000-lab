@@ -1,0 +1,61 @@
+{
+  "source": "Archived owner test, 2026-10-28; identifiers and network metadata omitted",
+  "kind": "historical_cold_boot",
+  "ok": true,
+  "exit_code": 0,
+  "units": [
+    {
+      "Id": "adagent-service.service",
+      "LoadState": "masked",
+      "ActiveState": "inactive",
+      "MainPID": "0"
+    },
+    {
+      "Id": "contents-recognition-service.service",
+      "LoadState": "masked",
+      "ActiveState": "inactive",
+      "MainPID": "0"
+    },
+    {
+      "Id": "canalysis-service.service",
+      "LoadState": "masked",
+      "ActiveState": "inactive",
+      "MainPID": "0"
+    },
+    {
+      "Id": "remote-management.service",
+      "LoadState": "masked",
+      "ActiveState": "inactive",
+      "MainPID": "0"
+    },
+    {
+      "Id": "org.tizen.voice-app.service",
+      "LoadState": "masked",
+      "ActiveState": "inactive",
+      "MainPID": "0"
+    },
+    {
+      "Id": "com.samsung.tv.ondevice-voice.service",
+      "LoadState": "masked",
+      "ActiveState": "inactive",
+      "MainPID": "0"
+    },
+    {
+      "Id": "com.samsung.tv.ghdaemon.service",
+      "LoadState": "masked",
+      "ActiveState": "inactive",
+      "MainPID": "0"
+    }
+  ],
+  "disabled_phase2_phase3_apps": 33,
+  "protected_apps": 18,
+  "protected_shared_apps": 6,
+  "uptime_seconds": 85.28,
+  "guard_host_mode": "127.0.0.1",
+  "not_proven": [
+    "All-network tracking elimination",
+    "Measured CPU/RAM improvement",
+    "Full persistence with a PC address in Developer Mode",
+    "Compatibility with other firmware"
+  ]
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://tvprivacyguard.local" version="1.0.3" viewmodes="maximized">
+<tizen:application id="tvprivgrd1.app" package="tvprivgrd1" required_version="6.5"/>
+<author>Local device owner</author><content src="index.html"/><icon src="icon.png"/><name>TV Privacy Guard</name>
+<feature name="http://tizen.org/feature/screen.size.all"/><feature name="http://tizen.org/feature/web.service"/>
+<tizen:privilege name="http://tizen.org/privilege/internet"/><tizen:privilege name="http://tizen.org/privilege/filesystem.read"/><tizen:privilege name="http://tizen.org/privilege/unlimitedstorage"/><tizen:privilege name="http://tizen.org/privilege/application.launch"/>
+<tizen:profile name="tv-samsung"/>
+<tizen:service id="tvprivgrd1.svc" auto-restart="false" on-boot="true"><tizen:content src="service/main.js"/><tizen:name>TVPrivacyGuard</tizen:name><tizen:description>Stops selected content-analysis, voice, gaming, advertising and remote-support services once per boot.</tizen:description></tizen:service>
+<tizen:setting screen-orientation="landscape" context-menu="disable" background-support="disable" encryption="disable" install-location="auto" hwkey-event="enable"/>
+</widget>

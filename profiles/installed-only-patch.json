@@ -1,0 +1,11 @@
+{
+  "method": "Tizen.TV.Service.AppsCommon.AppsHomeDataManager.FetchAppsHomeData",
+  "rva": "0x72a4",
+  "fileOffset": "0x54e6",
+  "ILRange": "0036..004d",
+  "before": "28020000066f150000062d0c28020000066f180000062c64",
+  "after": "2b1600000000000000000000000000000000000000000000",
+  "originalSha256": "431942805baf639a080300b438a6df27461dc6c1e1f013733eb9aaac0d964ec0",
+  "patchedSha256": "6e37622457b781df5e62da697e6fba659261bf2b43647f82fb145db5aa30b05d",
+  "purpose": "Jump to existing installed-apps-only branch; leave global retail/emulator configuration unchanged"
+}

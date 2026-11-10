@@ -1,0 +1,22 @@
+diff --git a/src/samsung_tv_root/sdb.py b/src/samsung_tv_root/sdb.py
+index 8f7db56..18d36af 100644
+--- a/src/samsung_tv_root/sdb.py
++++ b/src/samsung_tv_root/sdb.py
+@@ -276,7 +276,7 @@ class SdbClient:
+                 "printf '\\n[exit:%s]\\n' \"$?\" >&3;exec 3>&-"
+             )
+             launch_command = wrapped
+-            if _injection_argument_size(wrapped) > SDB_APPINSTALL_MAX_SAFE_BYTES:
++            if _injection_argument_size(wrapped) > min(SDB_APPINSTALL_MAX_SAFE_BYTES, 360):
+                 launch_command = self._stage_script(wrapped)
+             if on_listening is not None:
+                 on_listening(callback, bind, callback_port)
+@@ -359,7 +359,7 @@ class SdbClient:
+             local_path = Path(directory) / "capture.sh"
+             local_path.write_text(
+                 f"/bin/rm -f {remote_path}\n{command}\n",
+-                encoding="utf-8",
++                encoding="utf-8", newline="\n",
+             )
+             self.push(local_path, remote_path)
+         return f". {remote_path}"
