@@ -13,7 +13,7 @@ def main():
     parser.add_argument('--upstream', type=Path, required=True)
     parser.add_argument('--package', required=True, help='Unique ten-character package ID')
     parser.add_argument('--name', required=True)
-    parser.add_argument('--start', required=True, help='MSX start parameter; see docs/media.md')
+    parser.add_argument('--start', required=True, help='Start parameter for the new shortcut')
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     if not re.fullmatch(r'[A-Za-z0-9]{10}', args.package):

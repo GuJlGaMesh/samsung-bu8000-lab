@@ -18,9 +18,9 @@ The repository's MIT license covers original documentation and tools. Upstream f
 - License: [LICENSES/samsung-tv-root-Unlicense.txt](LICENSES/samsung-tv-root-Unlicense.txt).
 - Project files target the tested TV's .NET Core 3.1 runtime. `patches/sdb-windows.patch` adjusts script staging and LF handling in the separately cloned Python transport. The Python package and its dependencies are not vendored.
 
-## Media Station X and Samsung files
+## External application packages and Samsung files
 
-The MSX shortcut builder consumes the owner's separately downloaded official WGT. The MSX loader, icons, signed packages and remote catalog contents are not distributed here. Their licenses are not replaced by this repository's MIT license.
+The shortcut builder reads an official WGT supplied by the owner. Its loader, icons, signed packages and remote catalog contents retain their original licenses.
 
 The AppsCommon patch consumes the owner's exact-version Samsung DLL. Neither original nor modified Samsung DLLs or native images are distributed. Only the patch recipe and hashes are included.
 

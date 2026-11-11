@@ -6,9 +6,9 @@
 
 `pkgcmd -D` отключает приложение, **не удаляя пакет и данные**; `pkgcmd -A` включает его. SQLite используется только для чтения и проверки, не для прямого изменения флагов.
 
-Защищённые 24 app ID включают SmartThings, Samsung account/cloud, Butler/IoT, YouTube, MSX и общие PISA/CMS/content-службы. YouTube ID зависит от установленной версии. При несовпадении количества или статуса защищённых приложений применение остановится.
+Профиль проверяет 24 защищённых идентификатора, включая компоненты умного дома и учётной записи Samsung. При несовпадении количества или статуса защищённых приложений применение останавливается.
 
-Отключение голоса может нарушить голосовое управление, даже когда SmartThings через телефон работает. HDMI-CEC/PS5 после всей последовательности изменений не прошли полный итоговый тест. Если нужны голос, TV Plus, Gaming Hub или удалённая поддержка, полный профиль не подходит.
+Полный профиль отключает голосовые компоненты, TV Plus, Gaming Hub и удалённую поддержку. Проверьте этот список, прежде чем применять изменения.
 
 ## Генерация
 
@@ -20,10 +20,7 @@ python tools/generate_cleanup.py
 
 После ручной проверки полного кода модели и прошивки скопируйте `apply.sh` в `private/apply.sh` и добавьте `export BU8000_LAB_CONFIRMED=1` после `set -eu`. Это подтверждение оператора, не автоматическое распознавание прошивки. Не удаляйте проверки базы.
 
-```powershell
-python tools/run_tv_script.py --tv $tvIp --pc $pcIp --upstream private/samsung-tv-root --sdb $sdbPath --root --script private/apply.sh --output private/apply-result.json
-python tools/run_tv_script.py --tv $tvIp --pc $pcIp --upstream private/samsung-tv-root --sdb $sdbPath --root --script build/cleanup/verify.sh --output private/verify-result.json
-```
+На телевизоре с настроенным административным доступом запустите подготовленную копию `apply.sh`, затем `verify.sh`. При успешной проверке появится строка `APP_CONFIG_OK`.
 
 Исходные флаги сохраняются в `/opt/usr/home/owner/share/bu8000-lab-backup/baseline.tsv`, права каталога 0700. Сохраните baseline также на ПК. При существующих runtime-масках/override первая установка откажет: простой откат не смог бы точно восстановить чужое состояние. Не удаляйте чужие маски ради обхода проверки.
 
@@ -31,9 +28,7 @@ python tools/run_tv_script.py --tv $tvIp --pc $pcIp --upstream private/samsung-t
 
 ## Откат
 
-```powershell
-python tools/run_tv_script.py --tv $tvIp --pc $pcIp --upstream private/samsung-tv-root --sdb $sdbPath --root --script build/cleanup/restore.sh --output private/restore-result.json
-```
+Запустите `restore.sh` на том же телевизоре с административными правами. Скрипт читает сохранённый при первом применении `baseline.tsv`.
 
 Отключается boot-service Privacy Guard, восстанавливаются **исходные app-флаги**, удаляются только собственные marker-файлы, снимаются runtime-маски. Службы не запускаются насильно в текущем сеансе: сделайте холодный перезапуск и проверьте Home, видео, умный дом, звук и нужные входы.
 

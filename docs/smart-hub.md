@@ -27,14 +27,7 @@ python tools/patch_apps_common.py private/stock-apps/AppsCommon.installed-only.d
 
 Нужен root и остановка просмотра: перезапускаются компоненты Home. [tv/stock-apps.sh](../tv/stock-apps.sh) проверяет хеши обеих исходных библиотек, делает backup и сохраняет владельца/атрибуты через `cp -a`. Не заменяйте права универсальными 777.
 
-Передайте патченную DLL в `/home/owner/share/tmp/sdk_tools/AppsCommon.installed-only.dll`. Выполните локальную копию скрипта через `run_tv_script.py --root`, заменив `ACTION=inspect` на `ACTION=apply`. По умолчанию inspect ничего не меняет.
-
-```powershell
-& $sdbPath -s "${tvIp}:26101" push private/stock-apps/AppsCommon.installed-only.dll /home/owner/share/tmp/sdk_tools/AppsCommon.installed-only.dll
-Copy-Item tv/stock-apps.sh private/stock-apps-apply.sh
-# Теперь вручную измените ACTION в копии, сохранив UTF-8 и переводы строк LF.
-python tools/run_tv_script.py --tv $tvIp --pc $pcIp --upstream private/samsung-tv-root --sdb $sdbPath --root --script private/stock-apps-apply.sh --output private/stock-apps-apply.json
-```
+На телевизоре с настроенным административным доступом выполните `stock-apps.sh` в режиме `ACTION=inspect` и сверьте хеши с таблицей. Скопируйте подготовленную DLL в `/home/owner/share/tmp/sdk_tools/AppsCommon.installed-only.dll`. В своей копии скрипта замените `ACTION=inspect` на `ACTION=apply` и запустите её с правами администратора.
 
 Native image копируется в backup и удаляется из рабочего каталога, чтобы использовался изменённый managed IL. Без этого изменение DLL могло бы не повлиять на UI. Скрипт пытается восстановить оригиналы при обнаруженной ошибке; это не защита от отключения питания во время записи. Не обесточивайте ТВ до завершения команды.
 
